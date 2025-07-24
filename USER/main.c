@@ -7,16 +7,18 @@
 #include "rtc.h"
 //#include "oled_pic.h"
 
-#define LED_ON   0; //led¿ªÆô
-#define LED_OFF  1; //led¹Ø±Õ
+// change test
+
+#define LED_ON   0; //ledï¿½ï¿½ï¿½ï¿½
+#define LED_OFF  1; //ledï¿½Ø±ï¿½
 
 void (*current_operation_index)();
 unsigned char key;
-unsigned char func_index = 0; //Ö÷³ÌÐò´ËÊ±ËùÔÚ³ÌÐòµÄË÷ÒýÖµ
+unsigned char func_index = 0; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ú³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
 unsigned char last_index = 127;
 unsigned char last_sec = 60;
 
-//±íÅÌÒ³Ãæ¸üÐÂ
+//ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½ï¿½
 void Watch_Show(void)
 {
 	extern unsigned char func_index;
@@ -43,15 +45,15 @@ int main(void)
 	
 //	RTC_Set(2023,2,3,15,22,40);
 	
-	OLED_Fill_Fast(0xff); //Ìî³ä°×É«
+	OLED_Fill_Fast(0xff); //ï¿½ï¿½ï¿½ï¿½É«
 	delay_ms(200);
-	OLED_Fill_Fast(0x00); //ÇåÆÁ
+	OLED_Fill_Fast(0x00); //ï¿½ï¿½ï¿½ï¿½
 
     while(1){
 		key = KEY_Scan(0);
 		Menu_Show(key);
 		
-		Watch_Show(); //±íÅÌ¸üÐÂ
+		Watch_Show(); //ï¿½ï¿½ï¿½Ì¸ï¿½ï¿½ï¿½
 		
 		LED1=~LED1;
 		LED0 = LED_ON;
